@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "veriza-tech",
+    "slug": "veriza-tech",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "veriza-tech"
+}
