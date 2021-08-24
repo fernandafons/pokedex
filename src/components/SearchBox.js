@@ -1,18 +1,39 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 
 const SearchBox = ({searchfield, searchChange}) => {
     return (
-        <div className='pa2' >
-            <Text>Name or Number</Text><br/>
+        <View style={styles.seachbar}>
+            <Text style={styles.text}>Name or Number</Text><br/>
+            <View style={styles.searchinput}>
             <input 
-                className='pa3 ba b--green bg-lightest-blue'
                 type='search' 
                 placeholder='search pokemons'
                 onChange={searchChange}
                 />
-        </div>
+            </View>
+        </View>
     );
 }
+
+
+const styles=StyleSheet.create({
+    seachbar: {
+        // margin: 30,
+        paddingLeft: 40,
+        paddingTop: 10,
+        backgroundColor: '#696969',
+        // flex: 1,
+        // flexDirection: 'row',
+        height: 100,
+        
+    },
+    text: {
+        color: '#ffffff'
+    },
+    searchinput: {
+        width: 100
+    }
+});
 
 export default SearchBox;

@@ -13,7 +13,7 @@ import Scroll from './src/components/Scroll';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Pokédex</Text>
+      <Text style={styles.title}>Pokédex</Text>
       <SearchBox/>
       <GetPokemon/>
       <StatusBar style="auto" />
@@ -24,8 +24,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#f8f8f8',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
+  title: {
+    height: 50,
+    paddingLeft: 40,
+    paddingTop: 10,
+  }
 });
