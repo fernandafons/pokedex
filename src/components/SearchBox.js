@@ -19,20 +19,20 @@ const SearchBox = ({searchfield, searchChange}) => {
 
 const styles=StyleSheet.create({
     seachbar: {
-        // margin: 30,
         paddingLeft: 40,
-        paddingTop: 10,
-        backgroundColor: '#696969',
-        // flex: 1,
-        // flexDirection: 'row',
-        height: 100,
+        paddingTop: 20,
+        backgroundColor: '#2e2e2e',
+        height: 120,
         
     },
     text: {
-        color: '#ffffff'
+        color: '#ffffff',
+        // fontWeight: 'bold',
+        fontSize: 30
     },
     searchinput: {
-        width: 100
+        width: 200,
+        // height: 100
     }
 });
 

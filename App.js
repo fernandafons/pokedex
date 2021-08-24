@@ -31,6 +31,10 @@ const styles = StyleSheet.create({
   title: {
     height: 50,
     paddingLeft: 40,
-    paddingTop: 10,
+    paddingTop: 20,
+    fontFamily: 'arial',
+    fontWeight: 'bold',
+    fontSize: 20,
+    color: '#696969'
   }
 });
