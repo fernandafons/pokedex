@@ -24,26 +24,7 @@ const GetPokemon = () => {
                             result={myArr[i]}
                         />
                     </View>
-                
-                
              }
-            // return (
-                // <div>
-                  {/* <h1>Listar pokemons</h1> */}
-                  {/* {myArr.map(pokemon => (
-                    <li key={pokemon.show.id}>
-                      <h2>
-                        <strong>Título: </strong>
-                        {pokemon.show.name}
-                      </h2>
-                      <p>
-                        {pokemon.show.img}
-                      </p>
-          
-                    </li>
-                  ))} */}
-                {/* </div> */}
-            //   );
         }
 }
 
