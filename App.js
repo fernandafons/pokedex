@@ -13,6 +13,8 @@ import Scroll from './src/components/Scroll';
 export default function App() {
   return (
     <View style={styles.container}>
+      <Text>Pokédex</Text>
+      <SearchBox/>
       <GetPokemon/>
       <StatusBar style="auto" />
     </View>
