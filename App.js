@@ -7,15 +7,22 @@ import React, { useState, useEffect } from 'react';
 import CardList from './src/components/CardList';
 import SearchBox from './src/components/SearchBox';
 import Scroll from './src/components/Scroll';
-
+import ApiConn from './src/components/ApiConn';
 // import './App.css';  
 
 export default function App() {
+  const Pokemons = async () => {
+    const response = await ApiConn.get();
+    console.log(response)
+    // return response;
+  };
+  Pokemons()
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Pokédex</Text>
       <SearchBox/>
-      <GetPokemon/>
+      
+      <Text style={styles.title}>!</Text>
       <StatusBar style="auto" />
     </View>
   );
