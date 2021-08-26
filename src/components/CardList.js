@@ -1,6 +1,6 @@
 // import React from 'react';
 // import GetPokemon from './ApiConn';
-// import Card from './Card';
+import Card from './Card';
 
 // const CardList = ({ pokemons }) => {
 //     return (
@@ -24,12 +24,25 @@
 // export default CardList;
 
 import React, { useState, useEffect } from 'react';
+import { View } from 'react-native';
 import ApiConn from './ApiConn';
 
-const CardList = async () => {
-    const response = await ApiConn.get();
-    console.log(response)
-    // return response;
+const CardList = () => {
+    const GetPokemons = async () => {
+        const response = await ApiConn.get();
+        console.log(response.data)
+        return response.data
+    };
+
+    // const results = GetPokemons();
+    const [results, setResults] = useState([]);
+    return (
+        <View>
+            <Card 
+                results={results}
+            />
+        </View>
+    )
 };
 
 export default CardList;

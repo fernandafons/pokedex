@@ -11,17 +11,20 @@ import ApiConn from './src/components/ApiConn';
 // import './App.css';  
 
 export default function App() {
-  const Pokemons = async () => {
-    const response = await ApiConn.get();
-    console.log(response)
-    // return response;
-  };
-  Pokemons()
+  // const Pokemons = async () => {
+  //   const response = await ApiConn.get();
+  //   console.log(response.data)
+  //   return JSON.stringify(response.data);
+  // };
+  // const pokemonsList = Pokemons();
+  // console.log(typeof pokemonsList)
+  
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Pokédex</Text>
       <SearchBox/>
-      
+      <CardList/>
+      {/* <Text>{pokemonsList}</Text> */}
       <Text style={styles.title}>!</Text>
       <StatusBar style="auto" />
     </View>

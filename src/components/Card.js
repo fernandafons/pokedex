@@ -1,15 +1,13 @@
 import React from 'react';
-
-const Card = ({ name, type, img}) => {
+import {Text, View} from 'react-native';
+const Card = (props) => {
+    console.log(props)
     return (
-        <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5'>
-            <img alt="pokemon" src={img} />
-            <div>
-                <h2>{name}</h2>
-                <p>{type}</p>
-            </div>
-        </div>
-    );
-}
+        <View>
+            <Text>{props.results}</Text>
+            {/* insert Flatlist here */}
+        </View>
+    )
+};
 
 export default Card;
