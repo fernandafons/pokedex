@@ -1,21 +1,20 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-const SearchBox = ({searchfield, searchChange}) => {
-    return (
+const SearchBox = () => {
+    return(
         <View style={styles.seachbar}>
             <Text style={styles.text}>Name or Number</Text><br/>
             <View style={styles.searchinput}>
             <input 
                 type='search' 
-                placeholder='search pokemons'
-                onChange={searchChange}
-                />
+                // placeholder='search pokemons'
+                // onChange={searchChange}
+            />
             </View>
         </View>
-    );
-}
-
+    )
+};
 
 const styles=StyleSheet.create({
     seachbar: {
@@ -32,7 +31,7 @@ const styles=StyleSheet.create({
     },
     searchinput: {
         width: 200,
-        // height: 100
+        height: 100
     }
 });
 
