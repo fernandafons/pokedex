@@ -1,32 +1,41 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-// import GetPokemon from './src/components/ApiConn';
 
 import React, { useState, useEffect } from 'react';
 import CardList from './src/components/CardList';
 import SearchBox from './src/components/SearchBox';
-import ApiConn from './src/components/ApiConn';
+// import ApiConn from './src/components/ApiConn';
+import Scroll from './src/components/Scroll';
 
 export default function App() {
   const [pokemons, setPokemons] = useState([])
+  const [searchfield, setSearchfield] = useState('');
   useEffect(async () => {
     const response = await fetch('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json');
     const data = await response.json();
     const pokemonList = data.pokemon;
-    // console.log(pokemonList)
     setPokemons(pokemonList);
 }, []);
+
+    const onSearchChange = (event) => {
+      setSearchfield(event.target.value)
+    }
+
+    console.log("pokemons, searchfield")
+    console.log(pokemons, searchfield)
+    const pokemonsFiltered = pokemons.filter(pokemon => {
+      return pokemon.name.toLowerCase().includes(searchfield.toLowerCase());
+    })
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Pokédex</Text>
       <SearchBox
         pokemons={pokemons}
-        setPokemons={setPokemons}
+        searchChange={onSearchChange}
       />
-      <CardList
-        pokemons={pokemons}
-      />
-      <Text style={styles.title}>!</Text>
+      <Scroll>
+        <CardList pokemons={pokemonsFiltered}/>
+      </Scroll>
       <StatusBar style="auto" />
     </View>
   );
