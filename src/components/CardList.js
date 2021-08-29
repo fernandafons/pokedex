@@ -1,24 +1,18 @@
 import { View, Text, StyleSheet, Image } from 'react-native';
-import ApiConn from './ApiConn';
+// import ApiConn from './ApiConn';
 import React, { useState, useEffect } from 'react';
 
-const CardList = () => {
-    const [pokemons, setPokemons] = useState([])
-    const PokemonList = async () => {
-        const response = await ApiConn.get();
-        console.log("response.data.length")
-        console.log(response.data.pokemon.length)
-        return Array.from(response.data.pokemon)
-        
-    };
+const CardList = ({pokemons}) => {
+    // const [pokemons, setPokemons] = useState([])
 
-    useEffect(async () => {
-        const response = await fetch('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json');
-        const data = await response.json();
-        const pokemonList = data.pokemon;
-        // console.log(pokemonList)
-        setPokemons(pokemonList);
-    }, []);
+
+    // useEffect(async () => {
+    //     const response = await fetch('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json');
+    //     const data = await response.json();
+    //     const pokemonList = data.pokemon;
+    //     // console.log(pokemonList)
+    //     setPokemons(pokemonList);
+    // }, []);
 
     return (
         <View style={styles.container}>  

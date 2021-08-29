@@ -8,16 +8,28 @@ import SearchBox from './src/components/SearchBox';
 import ApiConn from './src/components/ApiConn';
 
 export default function App() {
-  
+  const [pokemons, setPokemons] = useState([])
+  useEffect(async () => {
+    const response = await fetch('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json');
+    const data = await response.json();
+    const pokemonList = data.pokemon;
+    // console.log(pokemonList)
+    setPokemons(pokemonList);
+}, []);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Pokédex</Text>
-      <SearchBox/>
-      <CardList/>
+      <SearchBox
+        pokemons={pokemons}
+        setPokemons={setPokemons}
+      />
+      <CardList
+        pokemons={pokemons}
+      />
       <Text style={styles.title}>!</Text>
       <StatusBar style="auto" />
     </View>
-  );a
+  );
 }
 
 const styles = StyleSheet.create({

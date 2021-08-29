@@ -1,7 +1,17 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const SearchBox = () => {
+const SearchBox = ({pokemons, setPokemons}) => {
+    const handleChange = (e) => {
+        const filtered = e.target.value.toLowerCase()
+        console.log("pokemons")
+        console.log(pokemons)
+        console.log(filtered)
+        const pokemonsFiltered = pokemons.filter(pokemon => (pokemon.name.toLowerCase() == filtered ||pokemon.num == filtered))
+        console.log(pokemonsFiltered)
+    }
+    console.log("!!!!!!!!!!!")
+    console.log(pokemons)
     return(
         <View style={styles.seachbar}>
             <Text style={styles.text}>Name or Number</Text><br/>
@@ -9,7 +19,7 @@ const SearchBox = () => {
             <input 
                 type='search' 
                 // placeholder='search pokemons'
-                // onChange={searchChange}
+                onChange={handleChange}
             />
             </View>
         </View>
