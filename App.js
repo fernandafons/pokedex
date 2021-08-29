@@ -24,7 +24,10 @@ export default function App() {
     console.log("pokemons, searchfield")
     console.log(pokemons, searchfield)
     const pokemonsFiltered = pokemons.filter(pokemon => {
-      return pokemon.name.toLowerCase().includes(searchfield.toLowerCase());
+      if (pokemon.name.toLowerCase().includes(searchfield.toLowerCase()) != "")
+        return pokemon.name.toLowerCase().includes(searchfield.toLowerCase())
+      else 
+        return parseInt(pokemon.num) == parseInt(searchfield);
     })
   return (
     <View style={styles.container}>
