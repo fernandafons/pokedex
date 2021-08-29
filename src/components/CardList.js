@@ -75,7 +75,7 @@ import Card from './Card';
 
 const CardList = ({ pokemons }) => {
     return (
-        <div>
+        <View style={styles.container}>
           {
             pokemons.map((user, i) => {
                 return (
@@ -89,8 +89,19 @@ const CardList = ({ pokemons }) => {
                     );
                 })
           }  
-        </div>
+        </View>
     );
 }
 
+const styles=StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        padding: 20,
+        justifyContent: 'center',
+        // alignContent: 'center',
+        flex: 1,
+        // backgroundColor: 'red'
+    },
+});
 export default CardList;
