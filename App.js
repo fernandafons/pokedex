@@ -20,8 +20,6 @@ export default function App() {
       setSearchfield(event.target.value)
     }
 
-    console.log("pokemons, searchfield")
-    console.log(pokemons, searchfield)
     const pokemonsFiltered = pokemons.filter(pokemon => {
       if (pokemon.name.toLowerCase().includes(searchfield.toLowerCase()) != "")
         return pokemon.name.toLowerCase().includes(searchfield.toLowerCase())

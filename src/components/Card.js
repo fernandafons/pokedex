@@ -4,18 +4,13 @@ import {Text, StyleSheet, Image, View} from 'react-native';
 const Card = ({ name, num, type, img}) => {
 
     const listTypes = type.map(function(typeItem) {
-        console.log(typeItem)
         if (typeItem == "Fire") {
-            console.log("Ta no if");
             return <li style={{display: 'inline', backgroundColor: '#ed5564', paddingLeft: 10, paddingRight: 10, borderRadius: 10, paddingBottom: 3, paddingTop: 3}}>{typeItem}</li>
         } else if (typeItem == "Grass") {
-            console.log("Ta no if");
             return <li style={{display: 'inline', backgroundColor: '#a0d568', paddingLeft: 10, paddingRight: 10, borderRadius: 10, paddingBottom: 3, paddingTop: 3}}>{typeItem}</li>
         } else if (typeItem == "Poison") {
-            console.log("Ta no if");
             return <li style={{display: 'inline', backgroundColor: '#ac92eb', paddingLeft: 10, paddingRight: 10, borderRadius: 10, paddingBottom: 3, paddingTop: 3}}>{typeItem}</li>
         } else {
-            console.log("NÂO ta no if");
             return <li style={{display: 'inline', backgroundColor: '#4fc1e8', paddingLeft: 10, paddingRight: 10, borderRadius: 10, paddingBottom: 3, paddingTop: 3}}>{typeItem}</li>
         }
     })
