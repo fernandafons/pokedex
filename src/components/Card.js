@@ -1,14 +1,8 @@
 import React from 'react';
 import {Text, StyleSheet, Image, View} from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
-import { color } from 'react-native-reanimated';
 
 const Card = ({ name, num, type, img}) => {
-    // console.log(img)
-    // const Item = ({ })
-    // const renderItem = ({item}) => (
-        //     <Item type={item.type} />
-        // )
+
     const listTypes = type.map(function(typeItem) {
         console.log(typeItem)
         if (typeItem == "Fire") {
@@ -28,7 +22,6 @@ const Card = ({ name, num, type, img}) => {
     
     return (
         <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5'>
-            {/* <img src={img} /> */}
             <div>
                 <View style={styles.card}>
                 <Text style={styles.num}>#{num}</Text>
@@ -41,8 +34,6 @@ const Card = ({ name, num, type, img}) => {
                 <View style={styles.typeContainer}>
                     <ul style={{ listStyleType: "none", listStyle: "none" }}>{listTypes}</ul></View>
                 </View>
-                {/* <p>{num}</p>
-                <p>{type}</p> */}
             </div>
         </div>
     );

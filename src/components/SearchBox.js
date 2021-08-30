@@ -2,15 +2,6 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 const SearchBox = ({pokemons, setPokemons, searchChange}) => {
-    // const handleChange = (e) => {
-    //     setPokemons(initialPokeList)
-    //     console.log("initialPokeList")
-    //     console.log(initialPokeList)
-    //     const filtered = e.target.value.toLowerCase()
-    //     const pokemonsFiltered = pokemons.filter(pokemon => (pokemon.name.toLowerCase().includes(filtered) || pokemon.num == filtered))
-    //     console.log(pokemonsFiltered)
-    //     setPokemons(pokemonsFiltered)
-    // }
 
     return(
         <View style={styles.seachbar}>
@@ -18,7 +9,7 @@ const SearchBox = ({pokemons, setPokemons, searchChange}) => {
             <View style={styles.searchinput}>
             <input 
                 type='search' 
-                // placeholder='search pokemons'
+                style={{height: 35}}
                 onChange ={searchChange}
             />
             </View>
@@ -31,16 +22,14 @@ const styles=StyleSheet.create({
         paddingLeft: 40,
         paddingTop: 20,
         backgroundColor: '#2e2e2e',
-        height: 120,
-        
+        height: 130,
     },
     text: {
         color: '#ffffff',
-        // fontWeight: 'bold',
         fontSize: 30
     },
     searchinput: {
-        width: 200,
+        width: 250,
         height: 100
     }
 });

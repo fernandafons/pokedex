@@ -4,7 +4,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import CardList from './src/components/CardList';
 import SearchBox from './src/components/SearchBox';
-// import ApiConn from './src/components/ApiConn';
 import Scroll from './src/components/Scroll';
 
 export default function App() {
@@ -48,8 +47,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f8f8f8',
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
   title: {
     height: 50,
