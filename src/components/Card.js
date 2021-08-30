@@ -16,8 +16,6 @@ const Card = ({ name, num, type, img}) => {
     })
     
     return (
-        <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5'>
-            <div>
                 <View style={styles.card}>
                 <Text style={styles.num}>#{num}</Text>
                 <Image
@@ -29,8 +27,6 @@ const Card = ({ name, num, type, img}) => {
                 <View style={styles.typeContainer}>
                     <ul style={{ listStyleType: "none", listStyle: "none" }}>{listTypes}</ul></View>
                 </View>
-            </div>
-        </div>
     );
 }
 

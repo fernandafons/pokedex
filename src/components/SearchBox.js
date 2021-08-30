@@ -1,16 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TextInput } from 'react-native';
 
-const SearchBox = ({pokemons, setPokemons, searchChange}) => {
+const SearchBox = ({setSearchfield}) => {
 
     return(
         <View style={styles.seachbar}>
-            <Text style={styles.text}>Name or Number</Text><br/>
+            <Text style={styles.text}>Name or Number</Text>
             <View style={styles.searchinput}>
-            <input 
-                type='search' 
-                style={{height: 35}}
-                onChange ={searchChange}
+            <TextInput
+                style={{height: 35, backgroundColor: "#fff"}}
+                onChangeText={(value) => setSearchfield(value)}
             />
             </View>
         </View>

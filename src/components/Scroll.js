@@ -1,10 +1,11 @@
 import React from 'react';
+import { View } from 'react-native';
 
 const Scroll = (props) => {
     return (
-        <div style={{overflow: 'scroll', border: '1px solid black', height: '800px'}}>
+            <View style={{overflow: 'scroll', border: '1px solid black', height: '800px'}}>
             {props.children}
-        </div>
+            </View>
     );
 };
 

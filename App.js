@@ -16,10 +16,6 @@ export default function App() {
     setPokemons(pokemonList);
 }, []);
 
-    const onSearchChange = (event) => {
-      setSearchfield(event.target.value)
-    }
-
     const pokemonsFiltered = pokemons.filter(pokemon => {
       if (pokemon.name.toLowerCase().includes(searchfield.toLowerCase()) != "")
         return pokemon.name.toLowerCase().includes(searchfield.toLowerCase())
@@ -30,8 +26,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.title}>Pokédex</Text>
       <SearchBox
-        pokemons={pokemons}
-        searchChange={onSearchChange}
+        setSearchfield={setSearchfield}
       />
       <Scroll>
         <CardList pokemons={pokemonsFiltered}/>
