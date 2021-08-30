@@ -1,21 +1,45 @@
 import React from 'react';
 import {Text, StyleSheet, Image, View} from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
+import { color } from 'react-native-reanimated';
 
 const Card = ({ name, num, type, img}) => {
     // console.log(img)
+    // const Item = ({ })
+    // const renderItem = ({item}) => (
+        //     <Item type={item.type} />
+        // )
+    const listTypes = type.map(function(typeItem) {
+        console.log(typeItem)
+        if (typeItem == "Fire") {
+            console.log("Ta no if");
+            return <li style={{display: 'inline', backgroundColor: '#ed5564', paddingLeft: 10, paddingRight: 10, borderRadius: 10, paddingBottom: 3, paddingTop: 3}}>{typeItem}</li>
+        } else if (typeItem == "Grass") {
+            console.log("Ta no if");
+            return <li style={{display: 'inline', backgroundColor: '#a0d568', paddingLeft: 10, paddingRight: 10, borderRadius: 10, paddingBottom: 3, paddingTop: 3}}>{typeItem}</li>
+        } else if (typeItem == "Poison") {
+            console.log("Ta no if");
+            return <li style={{display: 'inline', backgroundColor: '#ac92eb', paddingLeft: 10, paddingRight: 10, borderRadius: 10, paddingBottom: 3, paddingTop: 3}}>{typeItem}</li>
+        } else {
+            console.log("NÂO ta no if");
+            return <li style={{display: 'inline', backgroundColor: '#4fc1e8', paddingLeft: 10, paddingRight: 10, borderRadius: 10, paddingBottom: 3, paddingTop: 3}}>{typeItem}</li>
+        }
+    })
+    
     return (
         <div className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5'>
             {/* <img src={img} /> */}
             <div>
                 <View style={styles.card}>
+                <Text style={styles.num}>#{num}</Text>
                 <Image
                     style={styles.img}
                     source={{
                     uri: img,
                 }}/>
                 <Text style={styles.name}>{name}</Text>
-                <Text style={styles.num}>#{num}</Text>
-                <Text style={styles.type}>{type} </Text>
+                <View style={styles.typeContainer}>
+                    <ul style={{ listStyleType: "none", listStyle: "none" }}>{listTypes}</ul></View>
                 </View>
                 {/* <p>{num}</p>
                 <p>{type}</p> */}
@@ -35,7 +59,8 @@ const styles=StyleSheet.create({
 
     name: {
         fontSize: 22,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        textAlign: 'center'
     },
     img: {
         width: 200,
@@ -45,7 +70,13 @@ const styles=StyleSheet.create({
         fontSize: 16
     },
     type: {
-
+        backgroundColor: 'red'
+    },
+    typeContainer: {
+        flexDirection: 'row', 
+        alignSelf: 'flex-start',
+        flexWrap:  'wrap',
+        alignItems: 'center'
     }
 });
 
